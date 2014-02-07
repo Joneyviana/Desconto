@@ -3,10 +3,19 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-#   Use sqlite3 as the database for Active Record
+# Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-#  Use SCSS for stylesheets
+gem 'therubyracer'
+
+gem 'inherited_resources', '~> 1.4.1'
+gem 'haml', '~> 4.0.5'
+gem 'formtastic', '~> 2.2.1'
+gem 'cocoon', '~> 1.2.5'
+
+gem 'brazilian-rails', '~>3.3.0'
+
+# Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -43,3 +52,14 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :test, :development do
+  
+  gem 'rspec-rails', '~> 2.14.1'
+  gem 'capybara', '~> 2.2.1'
+
+  gem 'factory_girl_rails', '~> 4.3.0'
+  gem 'valid_attribute', '~> 1.3.1'
+  gem 'launchy'
+  gem 'database_cleaner'
+end
