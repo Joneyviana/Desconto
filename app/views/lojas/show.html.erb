@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @loja.nome %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @loja.descricao %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @loja.cnpj %>
+</p>
+
+<%= link_to 'Edit', edit_loja_path(@loja) %> |
+<%= link_to 'Back', lojas_path %>
