@@ -1,3 +1,4 @@
+#configuração capybara
 require 'capybara/rails'
 require 'capybara/dsl'
  
