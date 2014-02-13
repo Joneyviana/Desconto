@@ -1,5 +1,5 @@
 # coding: utf-8
-
+#teste de cliente
 require 'spec_helper' 
 
 feature 'gerenciar cliente' do
