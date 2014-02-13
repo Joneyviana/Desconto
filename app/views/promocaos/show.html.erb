@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @promocao.nome %>
+</p>
+
+<p>
+  <strong>Data inicio:</strong>
+  <%= @promocao.data_inicio %>
+</p>
+
+<p>
+  <strong>Data fim:</strong>
+  <%= @promocao.data_fim %>
+</p>
+
+<p>
+  <strong>Porcentagem:</strong>
+  <%= @promocao.porcentagem %>
+</p>
+
+<%= link_to 'Edit', edit_promocao_path(@promocao) %> |
+<%= link_to 'Back', promocaos_path %>

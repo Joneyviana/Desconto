@@ -1,0 +1,33 @@
+<h1>Listing promocaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data inicio</th>
+      <th>Data fim</th>
+      <th>Porcentagem</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promocaos.each do |promocao| %>
+      <tr>
+        <td><%= promocao.nome %></td>
+        <td><%= promocao.data_inicio %></td>
+        <td><%= promocao.data_fim %></td>
+        <td><%= promocao.porcentagem %></td>
+        <td><%= link_to 'Show', promocao %></td>
+        <td><%= link_to 'Edit', edit_promocao_path(promocao) %></td>
+        <td><%= link_to 'Excluir', promocao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promocao', new_promocao_path %>

@@ -1,4 +1,6 @@
 Desconto::Application.routes.draw do
+  resources :promocaos
+
   resources :lojas
 
   resources :clientes
