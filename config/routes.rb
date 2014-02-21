@@ -1,4 +1,6 @@
 Desconto::Application.routes.draw do
+  resources :produtos
+
   get "home/index"
   root :to=> "home#index"
   resources :promocaos
