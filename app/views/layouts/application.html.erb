@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
+
+ <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Desconto</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Desconto</title>
+  <%= stylesheet_link_tag  :all %>
+  <%= javascript_include_tag  :application %>
   <%= csrf_meta_tags %>
+
 </head>
+
+
 <body>
-
-<%= yield %>
-
+ 
+  
+<div id="menu-wrapper">
+	<div id="menu">
+		<ul>
+			<li ><%= link_to "Cliente", clientes_path %></li>
+			<li><%= link_to "Loja", lojas_path %></li>
+			<li><%= link_to "Promoção", promocaos_path %></li>
+			
+		</ul>
+	</div>
+  </div>
+ <div  id = header >
+     <div id = logo >  
+       <span>    
+            <h1> Sistema de Desconto<h1>
+       <span>
+   </div>
+    
+</div>       
+<div  id = 'page'>
+               
+                 <%= yield %>
+                       <div style='clear: both;'> </div>               
+                  
+    </div>
 </body>
 </html>
