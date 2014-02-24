@@ -39573,3 +39573,663 @@ Processing by PromocaosController#index as HTML
   [1m[35mPromocao Load (0.2ms)[0m  SELECT "promocaos".* FROM "promocaos"
   Rendered promocaos/index.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (164.7ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (143.5ms)[0m  [1mDELETE FROM "interesses";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'interesses';[0m
+  [1m[35m (143.6ms)[0m  DELETE FROM "lojas";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'lojas';
+  [1m[36m (143.7ms)[0m  [1mDELETE FROM "preferencia";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'preferencia';[0m
+  [1m[35m (143.4ms)[0m  DELETE FROM "produtos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'produtos';
+  [1m[36m (154.9ms)[0m  [1mDELETE FROM "promocaos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (133.0ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'promocaos';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "lojas" ("cnpj", "created_at", "descricao", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cnpj", 1], ["created_at", Seg, 24 Fev 2014 11:50:35 UTC +00:00], ["descricao", "MyString"], ["nome", "MyString"], ["updated_at", Seg, 24 Fev 2014 11:50:35 UTC +00:00]]
+  [1m[35m (150.2ms)[0m  commit transaction
+Started GET "/lojas" for 127.0.0.1 at 2014-02-24 08:50:35 -0300
+Processing by LojasController#index as HTML
+  [1m[36mLoja Load (0.2ms)[0m  [1mSELECT "lojas".* FROM "lojas"[0m
+  Rendered lojas/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 552ms (Views: 531.9ms | ActiveRecord: 0.2ms)
+Started DELETE "/lojas/1" for 127.0.0.1 at 2014-02-24 08:50:35 -0300
+Processing by LojasController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLoja Load (0.2ms)[0m  SELECT "lojas".* FROM "lojas" WHERE "lojas"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "lojas" WHERE "lojas"."id" = ?  [["id", 1]]
+  [1m[36m (156.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/lojas
+Completed 302 Found in 177ms (ActiveRecord: 156.5ms)
+Started GET "/lojas" for 127.0.0.1 at 2014-02-24 08:50:35 -0300
+Processing by LojasController#index as HTML
+  [1m[35mLoja Load (0.2ms)[0m  SELECT "lojas".* FROM "lojas"
+  Rendered lojas/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (164.4ms)[0m  [1mDELETE FROM "clientes";[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'clientes';[0m
+  [1m[35m (167.5ms)[0m  DELETE FROM "interesses";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'interesses';
+  [1m[36m (121.5ms)[0m  [1mDELETE FROM "lojas";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (133.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'lojas';[0m
+  [1m[35m (144.8ms)[0m  DELETE FROM "preferencia";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'preferencia';
+  [1m[36m (143.6ms)[0m  [1mDELETE FROM "produtos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'produtos';[0m
+  [1m[35m (154.8ms)[0m  DELETE FROM "promocaos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'promocaos';
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "lojas" ("cnpj", "created_at", "descricao", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)  [["cnpj", 1], ["created_at", Seg, 24 Fev 2014 11:50:36 UTC +00:00], ["descricao", "MyString"], ["nome", "MyString"], ["updated_at", Seg, 24 Fev 2014 11:50:36 UTC +00:00]]
+  [1m[36m (149.4ms)[0m  [1mcommit transaction[0m
+Started GET "/lojas/1/edit" for 127.0.0.1 at 2014-02-24 08:50:37 -0300
+Processing by LojasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLoja Load (0.1ms)[0m  SELECT "lojas".* FROM "lojas" WHERE "lojas"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered lojas/_form.html.haml (59.0ms)
+  Rendered lojas/edit.html.erb within layouts/application (62.2ms)
+Completed 200 OK in 66ms (Views: 63.8ms | ActiveRecord: 0.1ms)
+Started PATCH "/lojas/1" for 127.0.0.1 at 2014-02-24 08:50:37 -0300
+Processing by LojasController#update as HTML
+  Parameters: {"utf8"=>"✓", "loja"=>{"nome"=>"Casas Bahia", "descricao"=>"loja do povo", "cnpj"=>"1111111"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[36mLoja Load (0.1ms)[0m  [1mSELECT "lojas".* FROM "lojas" WHERE "lojas"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "lojas" SET "nome" = ?, "descricao" = ?, "cnpj" = ?, "updated_at" = ? WHERE "lojas"."id" = 1[0m  [["nome", "Casas Bahia"], ["descricao", "loja do povo"], ["cnpj", 1111111], ["updated_at", Seg, 24 Fev 2014 11:50:37 UTC +00:00]]
+  [1m[35m (151.5ms)[0m  commit transaction
+Redirected to http://www.example.com/lojas/1
+Completed 302 Found in 164ms (ActiveRecord: 152.0ms)
+Started GET "/lojas/1" for 127.0.0.1 at 2014-02-24 08:50:37 -0300
+Processing by LojasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLoja Load (0.1ms)[0m  [1mSELECT "lojas".* FROM "lojas" WHERE "lojas"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered lojas/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (138.8ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.5ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (154.4ms)[0m  [1mDELETE FROM "interesses";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'interesses';[0m
+  [1m[35m (154.6ms)[0m  DELETE FROM "lojas";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (155.2ms)[0m  DELETE FROM sqlite_sequence where name = 'lojas';
+  [1m[36m (166.9ms)[0m  [1mDELETE FROM "preferencia";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'preferencia';[0m
+  [1m[35m (165.9ms)[0m  DELETE FROM "produtos";
+  [1m[36m (0.5ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'produtos';
+  [1m[36m (145.5ms)[0m  [1mDELETE FROM "promocaos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'promocaos';[0m
+Started GET "/lojas/new" for 127.0.0.1 at 2014-02-24 08:50:38 -0300
+Processing by LojasController#new as HTML
+  Rendered lojas/_form.html.haml (7.9ms)
+  Rendered lojas/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+Started POST "/lojas" for 127.0.0.1 at 2014-02-24 08:50:38 -0300
+Processing by LojasController#create as HTML
+  Parameters: {"utf8"=>"✓", "loja"=>{"nome"=>"Casas Bahia", "descricao"=>"loja do povo", "cnpj"=>"1111111"}, "commit"=>"Salvar"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "lojas" ("cnpj", "created_at", "descricao", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cnpj", 1111111], ["created_at", Seg, 24 Fev 2014 11:50:38 UTC +00:00], ["descricao", "loja do povo"], ["nome", "Casas Bahia"], ["updated_at", Seg, 24 Fev 2014 11:50:38 UTC +00:00]]
+  [1m[35m (148.6ms)[0m  commit transaction
+Redirected to http://www.example.com/lojas/1
+Completed 302 Found in 158ms (ActiveRecord: 149.0ms)
+Started GET "/lojas/1" for 127.0.0.1 at 2014-02-24 08:50:38 -0300
+Processing by LojasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLoja Load (0.3ms)[0m  [1mSELECT "lojas".* FROM "lojas" WHERE "lojas"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered lojas/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (150.8ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (154.6ms)[0m  [1mDELETE FROM "interesses";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'interesses';[0m
+  [1m[35m (143.6ms)[0m  DELETE FROM "lojas";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (133.1ms)[0m  DELETE FROM sqlite_sequence where name = 'lojas';
+  [1m[36m (144.7ms)[0m  [1mDELETE FROM "preferencia";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'preferencia';[0m
+  [1m[35m (154.7ms)[0m  DELETE FROM "produtos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'produtos';
+  [1m[36m (154.9ms)[0m  [1mDELETE FROM "promocaos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'promocaos';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "clientes" ("created_at", "data_de_nascimento", "email", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Seg, 24 Fev 2014 11:50:39 UTC +00:00], ["data_de_nascimento", "MyString"], ["email", "MyString"], ["nome", "YYY"], ["updated_at", Seg, 24 Fev 2014 11:50:39 UTC +00:00]]
+  [1m[35m (147.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "produtos" ("created_at", "descricao", "nome", "preco", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:50:40 UTC +00:00], ["descricao", "MyString"], ["nome", "XXX"], ["preco", 1.5], ["updated_at", Seg, 24 Fev 2014 11:50:40 UTC +00:00]]
+  [1m[36m (163.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "preferencia" ("cliente_id", "created_at", "produto_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["cliente_id", 1], ["created_at", Seg, 24 Fev 2014 11:50:40 UTC +00:00], ["produto_id", 1], ["updated_at", Seg, 24 Fev 2014 11:50:40 UTC +00:00]]
+  [1m[35m (162.4ms)[0m  commit transaction
+Started GET "/preferencia" for 127.0.0.1 at 2014-02-24 08:50:40 -0300
+Processing by PreferenciaController#index as HTML
+  [1m[36mPreferencium Load (0.2ms)[0m  [1mSELECT "preferencia".* FROM "preferencia"[0m
+  [1m[35mProduto Load (0.2ms)[0m  SELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = ? ORDER BY "produtos"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = ? ORDER BY "clientes"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered preferencia/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.6ms)
+Started DELETE "/preferencia/1" for 127.0.0.1 at 2014-02-24 08:50:40 -0300
+Processing by PreferenciaController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPreferencium Load (0.2ms)[0m  SELECT "preferencia".* FROM "preferencia" WHERE "preferencia"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "preferencia" WHERE "preferencia"."id" = ?  [["id", 1]]
+  [1m[36m (160.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/preferencia
+Completed 302 Found in 169ms (ActiveRecord: 161.3ms)
+Started GET "/preferencia" for 127.0.0.1 at 2014-02-24 08:50:40 -0300
+Processing by PreferenciaController#index as HTML
+  [1m[35mPreferencium Load (0.2ms)[0m  SELECT "preferencia".* FROM "preferencia"
+  Rendered preferencia/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (152.2ms)[0m  [1mDELETE FROM "clientes";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (156.9ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'clientes';[0m
+  [1m[35m (144.8ms)[0m  DELETE FROM "interesses";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'interesses';
+  [1m[36m (143.8ms)[0m  [1mDELETE FROM "lojas";[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'lojas';[0m
+  [1m[35m (143.5ms)[0m  DELETE FROM "preferencia";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (133.0ms)[0m  DELETE FROM sqlite_sequence where name = 'preferencia';
+  [1m[36m (145.1ms)[0m  [1mDELETE FROM "produtos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (144.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'produtos';[0m
+  [1m[35m (156.0ms)[0m  DELETE FROM "promocaos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'promocaos';
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "clientes" ("created_at", "data_de_nascimento", "email", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:50:41 UTC +00:00], ["data_de_nascimento", "MyString"], ["email", "MyString"], ["nome", "YYY"], ["updated_at", Seg, 24 Fev 2014 11:50:41 UTC +00:00]]
+  [1m[36m (149.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "produtos" ("created_at", "descricao", "nome", "preco", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Seg, 24 Fev 2014 11:50:42 UTC +00:00], ["descricao", "MyString"], ["nome", "XXX"], ["preco", 1.5], ["updated_at", Seg, 24 Fev 2014 11:50:42 UTC +00:00]]
+  [1m[35m (160.6ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "preferencia" ("cliente_id", "created_at", "produto_id", "updated_at") VALUES (?, ?, ?, ?)  [["cliente_id", 1], ["created_at", Seg, 24 Fev 2014 11:50:42 UTC +00:00], ["produto_id", 1], ["updated_at", Seg, 24 Fev 2014 11:50:42 UTC +00:00]]
+  [1m[36m (160.7ms)[0m  [1mcommit transaction[0m
+Started GET "/preferencia/1/edit" for 127.0.0.1 at 2014-02-24 08:50:42 -0300
+Processing by PreferenciaController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPreferencium Load (0.3ms)[0m  SELECT "preferencia".* FROM "preferencia" WHERE "preferencia"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  [1m[35mCliente Load (0.1ms)[0m  SELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = ? ORDER BY "clientes"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos"[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = ? ORDER BY "produtos"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered preferencia/_form.html.haml (51.9ms)
+  Rendered preferencia/edit.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 0.8ms)
+Started PATCH "/preferencia/1" for 127.0.0.1 at 2014-02-24 08:50:42 -0300
+Processing by PreferenciaController#update as HTML
+  Parameters: {"utf8"=>"✓", "preferencium"=>{"cliente_id"=>"1", "produto_id"=>"1"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[36mPreferencium Load (0.1ms)[0m  [1mSELECT "preferencia".* FROM "preferencia" WHERE "preferencia"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/preferencia/1
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+Started GET "/preferencia/1" for 127.0.0.1 at 2014-02-24 08:50:42 -0300
+Processing by PreferenciaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPreferencium Load (0.1ms)[0m  SELECT "preferencia".* FROM "preferencia" WHERE "preferencia"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = ? ORDER BY "produtos"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.1ms)[0m  SELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = ? ORDER BY "clientes"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered preferencia/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (157.7ms)[0m  [1mDELETE FROM "clientes";[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (155.0ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'clientes';[0m
+  [1m[35m (144.9ms)[0m  DELETE FROM "interesses";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'interesses';
+  [1m[36m (145.5ms)[0m  [1mDELETE FROM "lojas";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'lojas';[0m
+  [1m[35m (143.8ms)[0m  DELETE FROM "preferencia";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (132.9ms)[0m  DELETE FROM sqlite_sequence where name = 'preferencia';
+  [1m[36m (233.5ms)[0m  [1mDELETE FROM "produtos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (144.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'produtos';[0m
+  [1m[35m (156.0ms)[0m  DELETE FROM "promocaos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'promocaos';
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "clientes" ("created_at", "data_de_nascimento", "email", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:50:43 UTC +00:00], ["data_de_nascimento", "MyString"], ["email", "MyString"], ["nome", "YYY"], ["updated_at", Seg, 24 Fev 2014 11:50:43 UTC +00:00]]
+  [1m[36m (149.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "produtos" ("created_at", "descricao", "nome", "preco", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Seg, 24 Fev 2014 11:50:44 UTC +00:00], ["descricao", "MyString"], ["nome", "XXX"], ["preco", 1.5], ["updated_at", Seg, 24 Fev 2014 11:50:44 UTC +00:00]]
+  [1m[35m (160.7ms)[0m  commit transaction
+Started GET "/preferencia/new" for 127.0.0.1 at 2014-02-24 08:50:44 -0300
+Processing by PreferenciaController#new as HTML
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos"
+  Rendered preferencia/_form.html.haml (9.2ms)
+  Rendered preferencia/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.3ms)
+Started POST "/preferencia" for 127.0.0.1 at 2014-02-24 08:50:44 -0300
+Processing by PreferenciaController#create as HTML
+  Parameters: {"utf8"=>"✓", "preferencium"=>{"cliente_id"=>"1", "produto_id"=>"1"}, "commit"=>"Salvar"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "preferencia" ("cliente_id", "created_at", "produto_id", "updated_at") VALUES (?, ?, ?, ?)  [["cliente_id", 1], ["created_at", Seg, 24 Fev 2014 11:50:44 UTC +00:00], ["produto_id", 1], ["updated_at", Seg, 24 Fev 2014 11:50:44 UTC +00:00]]
+  [1m[36m (165.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/preferencia/1
+Completed 302 Found in 174ms (ActiveRecord: 165.4ms)
+Started GET "/preferencia/1" for 127.0.0.1 at 2014-02-24 08:50:44 -0300
+Processing by PreferenciaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPreferencium Load (0.1ms)[0m  SELECT "preferencia".* FROM "preferencia" WHERE "preferencia"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mProduto Load (0.1ms)[0m  [1mSELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = ? ORDER BY "produtos"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mCliente Load (0.1ms)[0m  SELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = ? ORDER BY "clientes"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered preferencia/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (151.0ms)[0m  [1mDELETE FROM "clientes";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (155.0ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'clientes';[0m
+  [1m[35m (167.1ms)[0m  DELETE FROM "interesses";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'interesses';
+  [1m[36m (143.7ms)[0m  [1mDELETE FROM "lojas";[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'lojas';[0m
+  [1m[35m (143.4ms)[0m  DELETE FROM "preferencia";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (135.1ms)[0m  DELETE FROM sqlite_sequence where name = 'preferencia';
+  [1m[36m (145.0ms)[0m  [1mDELETE FROM "produtos";[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (143.7ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'produtos';[0m
+  [1m[35m (145.0ms)[0m  DELETE FROM "promocaos";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'promocaos';
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "clientes" ("created_at", "data_de_nascimento", "email", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:50:45 UTC +00:00], ["data_de_nascimento", "MyString"], ["email", "MyString"], ["nome", "MyString"], ["updated_at", Seg, 24 Fev 2014 11:50:45 UTC +00:00]]
+  [1m[36m (149.9ms)[0m  [1mcommit transaction[0m
+Started GET "/clientes" for 127.0.0.1 at 2014-02-24 08:50:45 -0300
+Processing by ClientesController#index as HTML
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered clientes/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+Started DELETE "/clientes/1" for 127.0.0.1 at 2014-02-24 08:50:45 -0300
+Processing by ClientesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "clientes" WHERE "clientes"."id" = ?[0m  [["id", 1]]
+  [1m[35m (155.0ms)[0m  commit transaction
+Redirected to http://www.example.com/clientes
+Completed 302 Found in 163ms (ActiveRecord: 155.5ms)
+Started GET "/clientes" for 127.0.0.1 at 2014-02-24 08:50:46 -0300
+Processing by ClientesController#index as HTML
+  [1m[36mCliente Load (0.2ms)[0m  [1mSELECT "clientes".* FROM "clientes"[0m
+  Rendered clientes/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (150.2ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (154.9ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (167.1ms)[0m  [1mDELETE FROM "interesses";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'interesses';[0m
+  [1m[35m (176.9ms)[0m  DELETE FROM "lojas";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'lojas';
+  [1m[36m (143.6ms)[0m  [1mDELETE FROM "preferencia";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'preferencia';[0m
+  [1m[35m (143.6ms)[0m  DELETE FROM "produtos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'produtos';
+  [1m[36m (143.5ms)[0m  [1mDELETE FROM "promocaos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'promocaos';[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "clientes" ("created_at", "data_de_nascimento", "email", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Seg, 24 Fev 2014 11:50:47 UTC +00:00], ["data_de_nascimento", "MyString"], ["email", "MyString"], ["nome", "MyString"], ["updated_at", Seg, 24 Fev 2014 11:50:47 UTC +00:00]]
+  [1m[35m (138.8ms)[0m  commit transaction
+Started GET "/clientes/1/edit" for 127.0.0.1 at 2014-02-24 08:50:47 -0300
+Processing by ClientesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCliente Load (0.3ms)[0m  [1mSELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered clientes/_form.html.haml (9.8ms)
+  Rendered clientes/edit.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.3ms)
+Started PATCH "/clientes/1" for 127.0.0.1 at 2014-02-24 08:50:47 -0300
+Processing by ClientesController#update as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Luiz", "data_de_nascimento"=>"01/09/1991", "email"=>"viney_goes@hotmail.com"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[35mCliente Load (0.2ms)[0m  SELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "clientes" SET "nome" = ?, "data_de_nascimento" = ?, "email" = ?, "updated_at" = ? WHERE "clientes"."id" = 1  [["nome", "Luiz"], ["data_de_nascimento", "01/09/1991"], ["email", "viney_goes@hotmail.com"], ["updated_at", Seg, 24 Fev 2014 11:50:47 UTC +00:00]]
+  [1m[36m (137.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 147ms (ActiveRecord: 137.7ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2014-02-24 08:50:47 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered clientes/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (138.8ms)[0m  [1mDELETE FROM "clientes";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (155.1ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'clientes';[0m
+  [1m[35m (166.8ms)[0m  DELETE FROM "interesses";
+  [1m[36m (0.5ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'interesses';
+  [1m[36m (165.9ms)[0m  [1mDELETE FROM "lojas";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'lojas';[0m
+  [1m[35m (165.9ms)[0m  DELETE FROM "preferencia";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'preferencia';
+  [1m[36m (176.9ms)[0m  [1mDELETE FROM "produtos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'produtos';[0m
+  [1m[35m (165.9ms)[0m  DELETE FROM "promocaos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'promocaos';
+Started GET "/clientes/new" for 127.0.0.1 at 2014-02-24 08:50:48 -0300
+Processing by ClientesController#new as HTML
+  Rendered clientes/_form.html.haml (9.1ms)
+  Rendered clientes/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+Started POST "/clientes" for 127.0.0.1 at 2014-02-24 08:50:48 -0300
+Processing by ClientesController#create as HTML
+  Parameters: {"utf8"=>"✓", "cliente"=>{"nome"=>"Luiz", "data_de_nascimento"=>"01/09/1991", "email"=>"viney_goes@hotmail.com"}, "commit"=>"Salvar"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "clientes" ("created_at", "data_de_nascimento", "email", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:50:48 UTC +00:00], ["data_de_nascimento", "01/09/1991"], ["email", "viney_goes@hotmail.com"], ["nome", "Luiz"], ["updated_at", Seg, 24 Fev 2014 11:50:48 UTC +00:00]]
+  [1m[36m (131.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/clientes/1
+Completed 302 Found in 140ms (ActiveRecord: 131.8ms)
+Started GET "/clientes/1" for 127.0.0.1 at 2014-02-24 08:50:49 -0300
+Processing by ClientesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCliente Load (0.1ms)[0m  SELECT "clientes".* FROM "clientes" WHERE "clientes"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered clientes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (136.6ms)[0m  [1mDELETE FROM "clientes";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (132.9ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'clientes';[0m
+  [1m[35m (144.8ms)[0m  DELETE FROM "interesses";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'interesses';
+  [1m[36m (143.6ms)[0m  [1mDELETE FROM "lojas";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'lojas';[0m
+  [1m[35m (143.7ms)[0m  DELETE FROM "preferencia";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'preferencia';
+  [1m[36m (156.4ms)[0m  [1mDELETE FROM "produtos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'produtos';[0m
+  [1m[35m (166.2ms)[0m  DELETE FROM "promocaos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'promocaos';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "promocaos" ("created_at", "data_fim", "data_inicio", "nome", "porcentagem", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:50:50 UTC +00:00], ["data_fim", Wed, 12 Feb 2014], ["data_inicio", Wed, 12 Feb 2014], ["nome", "MyString"], ["porcentagem", 1.5], ["updated_at", Seg, 24 Fev 2014 11:50:50 UTC +00:00]]
+  [1m[36m (166.2ms)[0m  [1mcommit transaction[0m
+Started GET "/promocaos" for 127.0.0.1 at 2014-02-24 08:50:50 -0300
+Processing by PromocaosController#index as HTML
+  [1m[35mPromocao Load (0.2ms)[0m  SELECT "promocaos".* FROM "promocaos"
+  Rendered promocaos/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+Started DELETE "/promocaos/1" for 127.0.0.1 at 2014-02-24 08:50:50 -0300
+Processing by PromocaosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPromocao Load (0.2ms)[0m  [1mSELECT "promocaos".* FROM "promocaos" WHERE "promocaos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "promocaos" WHERE "promocaos"."id" = ?[0m  [["id", 1]]
+  [1m[35m (168.9ms)[0m  commit transaction
+Redirected to http://www.example.com/promocaos
+Completed 302 Found in 178ms (ActiveRecord: 169.4ms)
+Started GET "/promocaos" for 127.0.0.1 at 2014-02-24 08:50:50 -0300
+Processing by PromocaosController#index as HTML
+  [1m[36mPromocao Load (0.2ms)[0m  [1mSELECT "promocaos".* FROM "promocaos"[0m
+  Rendered promocaos/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (164.1ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (165.6ms)[0m  [1mDELETE FROM "interesses";[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'interesses';[0m
+  [1m[35m (143.5ms)[0m  DELETE FROM "lojas";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'lojas';
+  [1m[36m (143.8ms)[0m  [1mDELETE FROM "preferencia";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'preferencia';[0m
+  [1m[35m (143.4ms)[0m  DELETE FROM "produtos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'produtos';
+  [1m[36m (143.9ms)[0m  [1mDELETE FROM "promocaos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (177.5ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'promocaos';[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "promocaos" ("created_at", "data_fim", "data_inicio", "nome", "porcentagem", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Seg, 24 Fev 2014 11:50:51 UTC +00:00], ["data_fim", Wed, 12 Feb 2014], ["data_inicio", Wed, 12 Feb 2014], ["nome", "MyString"], ["porcentagem", 1.5], ["updated_at", Seg, 24 Fev 2014 11:50:51 UTC +00:00]]
+  [1m[35m (150.7ms)[0m  commit transaction
+Started GET "/promocaos/1/edit" for 127.0.0.1 at 2014-02-24 08:50:51 -0300
+Processing by PromocaosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPromocao Load (0.1ms)[0m  [1mSELECT "promocaos".* FROM "promocaos" WHERE "promocaos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered promocaos/_form.html.haml (10.3ms)
+  Rendered promocaos/edit.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.1ms)
+Started PATCH "/promocaos/1" for 127.0.0.1 at 2014-02-24 08:50:51 -0300
+Processing by PromocaosController#update as HTML
+  Parameters: {"utf8"=>"✓", "promocao"=>{"nome"=>"liquidação", "data_inicio"=>"09-01-1991", "data_fim"=>"12-02-2004", "porcentagem"=>"0.2"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[35mPromocao Load (0.1ms)[0m  SELECT "promocaos".* FROM "promocaos" WHERE "promocaos"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "promocaos" SET "nome" = ?, "data_inicio" = ?, "data_fim" = ?, "porcentagem" = ?, "updated_at" = ? WHERE "promocaos"."id" = 1  [["nome", "liquidação"], ["data_inicio", Wed, 09 Jan 1991], ["data_fim", Thu, 12 Feb 2004], ["porcentagem", 0.2], ["updated_at", Seg, 24 Fev 2014 11:50:51 UTC +00:00]]
+  [1m[36m (147.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/promocaos/1
+Completed 302 Found in 155ms (ActiveRecord: 147.9ms)
+Started GET "/promocaos/1" for 127.0.0.1 at 2014-02-24 08:50:51 -0300
+Processing by PromocaosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPromocao Load (0.1ms)[0m  SELECT "promocaos".* FROM "promocaos" WHERE "promocaos"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered promocaos/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (135.9ms)[0m  [1mDELETE FROM "clientes";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'clientes';[0m
+  [1m[35m (167.7ms)[0m  DELETE FROM "interesses";
+  [1m[36m (0.5ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'interesses';
+  [1m[36m (276.9ms)[0m  [1mDELETE FROM "lojas";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'lojas';[0m
+  [1m[35m (176.8ms)[0m  DELETE FROM "preferencia";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.2ms)[0m  DELETE FROM sqlite_sequence where name = 'preferencia';
+  [1m[36m (144.2ms)[0m  [1mDELETE FROM "produtos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'produtos';[0m
+  [1m[35m (143.8ms)[0m  DELETE FROM "promocaos";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (132.8ms)[0m  DELETE FROM sqlite_sequence where name = 'promocaos';
+Started GET "/promocaos/new" for 127.0.0.1 at 2014-02-24 08:50:53 -0300
+Processing by PromocaosController#new as HTML
+  Rendered promocaos/_form.html.haml (11.3ms)
+  Rendered promocaos/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+Started POST "/promocaos" for 127.0.0.1 at 2014-02-24 08:50:53 -0300
+Processing by PromocaosController#create as HTML
+  Parameters: {"utf8"=>"✓", "promocao"=>{"nome"=>"liquidação", "data_inicio"=>"09-01-1991", "data_fim"=>"12-02-2004", "porcentagem"=>"0.2"}, "commit"=>"Salvar"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "promocaos" ("created_at", "data_fim", "data_inicio", "nome", "porcentagem", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:50:53 UTC +00:00], ["data_fim", Thu, 12 Feb 2004], ["data_inicio", Wed, 09 Jan 1991], ["nome", "liquidação"], ["porcentagem", 0.2], ["updated_at", Seg, 24 Fev 2014 11:50:53 UTC +00:00]]
+  [1m[36m (167.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/promocaos/1
+Completed 302 Found in 173ms (ActiveRecord: 168.1ms)
+Started GET "/promocaos/1" for 127.0.0.1 at 2014-02-24 08:50:53 -0300
+Processing by PromocaosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPromocao Load (0.1ms)[0m  SELECT "promocaos".* FROM "promocaos" WHERE "promocaos"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered promocaos/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (211.2ms)[0m  [1mDELETE FROM "clientes";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'clientes';[0m
+  [1m[35m (143.4ms)[0m  DELETE FROM "interesses";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.1ms)[0m  DELETE FROM sqlite_sequence where name = 'interesses';
+  [1m[36m (144.8ms)[0m  [1mDELETE FROM "lojas";[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'lojas';[0m
+  [1m[35m (143.7ms)[0m  DELETE FROM "preferencia";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'preferencia';
+  [1m[36m (121.3ms)[0m  [1mDELETE FROM "produtos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'produtos';[0m
+  [1m[35m (155.0ms)[0m  DELETE FROM "promocaos";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (113.6ms)[0m  DELETE FROM sqlite_sequence where name = 'promocaos';
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "lojas" ("cnpj", "created_at", "descricao", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)  [["cnpj", 1], ["created_at", Seg, 24 Fev 2014 11:50:54 UTC +00:00], ["descricao", "MyString"], ["nome", "YYY"], ["updated_at", Seg, 24 Fev 2014 11:50:54 UTC +00:00]]
+  [1m[36m (273.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "promocaos" ("created_at", "data_fim", "data_inicio", "nome", "porcentagem", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Seg, 24 Fev 2014 11:50:54 UTC +00:00], ["data_fim", Wed, 12 Feb 2014], ["data_inicio", Wed, 12 Feb 2014], ["nome", "XXX"], ["porcentagem", 1.5], ["updated_at", Seg, 24 Fev 2014 11:50:54 UTC +00:00]]
+  [1m[35m (149.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "produtos" ("created_at", "descricao", "loja_id", "nome", "preco", "promocao_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:50:54 UTC +00:00], ["descricao", "MyString"], ["loja_id", 1], ["nome", "MyString"], ["preco", 1.5], ["promocao_id", 1], ["updated_at", Seg, 24 Fev 2014 11:50:54 UTC +00:00]]
+  [1m[36m (141.9ms)[0m  [1mcommit transaction[0m
+Started GET "/produtos" for 127.0.0.1 at 2014-02-24 08:50:55 -0300
+Processing by ProdutosController#index as HTML
+  [1m[35mProduto Load (0.2ms)[0m  SELECT "produtos".* FROM "produtos"
+  [1m[36mLoja Load (0.2ms)[0m  [1mSELECT "lojas".* FROM "lojas" WHERE "lojas"."id" = ? ORDER BY "lojas"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPromocao Load (0.2ms)[0m  SELECT "promocaos".* FROM "promocaos" WHERE "promocaos"."id" = ? ORDER BY "promocaos"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered produtos/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.6ms)
+Started DELETE "/produtos/1" for 127.0.0.1 at 2014-02-24 08:50:55 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduto Load (0.2ms)[0m  [1mSELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "produtos" WHERE "produtos"."id" = ?[0m  [["id", 1]]
+  [1m[35m (149.8ms)[0m  commit transaction
+Redirected to http://www.example.com/produtos
+Completed 302 Found in 155ms (ActiveRecord: 150.3ms)
+Started GET "/produtos" for 127.0.0.1 at 2014-02-24 08:50:55 -0300
+Processing by ProdutosController#index as HTML
+  [1m[36mProduto Load (0.4ms)[0m  [1mSELECT "produtos".* FROM "produtos"[0m
+  Rendered produtos/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (128.0ms)[0m  DELETE FROM "clientes";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'clientes';
+  [1m[36m (143.3ms)[0m  [1mDELETE FROM "interesses";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'interesses';[0m
+  [1m[35m (143.8ms)[0m  DELETE FROM "lojas";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (166.4ms)[0m  DELETE FROM sqlite_sequence where name = 'lojas';
+  [1m[36m (256.1ms)[0m  [1mDELETE FROM "preferencia";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'preferencia';[0m
+  [1m[35m (154.7ms)[0m  DELETE FROM "produtos";
+  [1m[36m (0.3ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (210.9ms)[0m  DELETE FROM sqlite_sequence where name = 'produtos';
+  [1m[36m (278.6ms)[0m  [1mDELETE FROM "promocaos";[0m
+  [1m[35m (0.2ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (291.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'promocaos';[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "lojas" ("cnpj", "created_at", "descricao", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cnpj", 1], ["created_at", Seg, 24 Fev 2014 11:50:57 UTC +00:00], ["descricao", "MyString"], ["nome", "YYY"], ["updated_at", Seg, 24 Fev 2014 11:50:57 UTC +00:00]]
+  [1m[35m (397.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "promocaos" ("created_at", "data_fim", "data_inicio", "nome", "porcentagem", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:50:57 UTC +00:00], ["data_fim", Wed, 12 Feb 2014], ["data_inicio", Wed, 12 Feb 2014], ["nome", "XXX"], ["porcentagem", 1.5], ["updated_at", Seg, 24 Fev 2014 11:50:57 UTC +00:00]]
+  [1m[36m (261.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "produtos" ("created_at", "descricao", "loja_id", "nome", "preco", "promocao_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Seg, 24 Fev 2014 11:50:57 UTC +00:00], ["descricao", "MyString"], ["loja_id", 1], ["nome", "MyString"], ["preco", 1.5], ["promocao_id", 1], ["updated_at", Seg, 24 Fev 2014 11:50:57 UTC +00:00]]
+  [1m[35m (227.2ms)[0m  commit transaction
+Started GET "/produtos/1/edit" for 127.0.0.1 at 2014-02-24 08:50:58 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduto Load (0.3ms)[0m  [1mSELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mLoja Load (0.4ms)[0m  SELECT "lojas".* FROM "lojas"
+  [1m[36mLoja Load (0.1ms)[0m  [1mSELECT "lojas".* FROM "lojas" WHERE "lojas"."id" = ? ORDER BY "lojas"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPromocao Load (0.1ms)[0m  SELECT "promocaos".* FROM "promocaos"
+  [1m[36mPromocao Load (0.1ms)[0m  [1mSELECT "promocaos".* FROM "promocaos" WHERE "promocaos"."id" = ? ORDER BY "promocaos"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered produtos/_form.html.haml (23.8ms)
+  Rendered produtos/edit.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 1.0ms)
+Started PATCH "/produtos/1" for 127.0.0.1 at 2014-02-24 08:50:58 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "produto"=>{"loja_id"=>"1", "promocao_id"=>"1", "nome"=>"liquidificador", "descricao"=>"servem para bater", "preco"=>"23"}, "commit"=>"Salvar", "id"=>"1"}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "produtos" SET "nome" = ?, "descricao" = ?, "preco" = ?, "updated_at" = ? WHERE "produtos"."id" = 1  [["nome", "liquidificador"], ["descricao", "servem para bater"], ["preco", 23.0], ["updated_at", Seg, 24 Fev 2014 11:50:58 UTC +00:00]]
+  [1m[36m (250.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/produtos/1
+Completed 302 Found in 261ms (ActiveRecord: 250.9ms)
+Started GET "/produtos/1" for 127.0.0.1 at 2014-02-24 08:50:58 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mLoja Load (0.1ms)[0m  [1mSELECT "lojas".* FROM "lojas" WHERE "lojas"."id" = ? ORDER BY "lojas"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPromocao Load (0.1ms)[0m  SELECT "promocaos".* FROM "promocaos" WHERE "promocaos"."id" = ? ORDER BY "promocaos"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered produtos/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (217.2ms)[0m  [1mDELETE FROM "clientes";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'clientes';[0m
+  [1m[35m (232.2ms)[0m  DELETE FROM "interesses";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'interesses';
+  [1m[36m (143.6ms)[0m  [1mDELETE FROM "lojas";[0m
+  [1m[35m (0.5ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (211.0ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'lojas';[0m
+  [1m[35m (267.1ms)[0m  DELETE FROM "preferencia";
+  [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'preferencia';
+  [1m[36m (243.8ms)[0m  [1mDELETE FROM "produtos";[0m
+  [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+  [1m[36m (155.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'produtos';[0m
+  [1m[35m (268.8ms)[0m  DELETE FROM "promocaos";
+  [1m[36m (0.2ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+  [1m[35m (233.8ms)[0m  DELETE FROM sqlite_sequence where name = 'promocaos';
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "lojas" ("cnpj", "created_at", "descricao", "nome", "updated_at") VALUES (?, ?, ?, ?, ?)  [["cnpj", 1], ["created_at", Seg, 24 Fev 2014 11:51:00 UTC +00:00], ["descricao", "MyString"], ["nome", "YYY"], ["updated_at", Seg, 24 Fev 2014 11:51:00 UTC +00:00]]
+  [1m[36m (315.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "promocaos" ("created_at", "data_fim", "data_inicio", "nome", "porcentagem", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Seg, 24 Fev 2014 11:51:00 UTC +00:00], ["data_fim", Wed, 12 Feb 2014], ["data_inicio", Wed, 12 Feb 2014], ["nome", "XXX"], ["porcentagem", 1.5], ["updated_at", Seg, 24 Fev 2014 11:51:00 UTC +00:00]]
+  [1m[35m (364.5ms)[0m  commit transaction
+Started GET "/produtos/new" for 127.0.0.1 at 2014-02-24 08:51:01 -0300
+Processing by ProdutosController#new as HTML
+  [1m[36mLoja Load (0.5ms)[0m  [1mSELECT "lojas".* FROM "lojas"[0m
+  [1m[35mPromocao Load (0.1ms)[0m  SELECT "promocaos".* FROM "promocaos"
+  Rendered produtos/_form.html.haml (18.8ms)
+  Rendered produtos/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.6ms)
+Started POST "/produtos" for 127.0.0.1 at 2014-02-24 08:51:01 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "produto"=>{"loja_id"=>"1", "promocao_id"=>"1", "nome"=>"liquidificador", "descricao"=>"servem para bater", "preco"=>"23"}, "commit"=>"Salvar"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "produtos" ("created_at", "descricao", "loja_id", "nome", "preco", "promocao_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Seg, 24 Fev 2014 11:51:01 UTC +00:00], ["descricao", "servem para bater"], ["loja_id", 1], ["nome", "liquidificador"], ["preco", 23.0], ["promocao_id", 1], ["updated_at", Seg, 24 Fev 2014 11:51:01 UTC +00:00]]
+  [1m[36m (236.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://www.example.com/produtos/1
+Completed 302 Found in 246ms (ActiveRecord: 237.0ms)
+Started GET "/produtos/1" for 127.0.0.1 at 2014-02-24 08:51:01 -0300
+Processing by ProdutosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProduto Load (0.1ms)[0m  SELECT "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mLoja Load (0.1ms)[0m  [1mSELECT "lojas".* FROM "lojas" WHERE "lojas"."id" = ? ORDER BY "lojas"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPromocao Load (0.2ms)[0m  SELECT "promocaos".* FROM "promocaos" WHERE "promocaos"."id" = ? ORDER BY "promocaos"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered produtos/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.4ms)

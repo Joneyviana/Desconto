@@ -14,8 +14,8 @@
   <tbody>
     <% @preferencia.each do |preferencium| %>
       <tr>
-        <td><%= preferencium.produto.nome %></td>
-        <td><%= preferencium.cliente.nome %></td>
+        <td><%= preferencium.produto %></td>
+        <td><%= preferencium.cliente%></td>
         <td><%= link_to 'Show', preferencium %></td>
         <td><%= link_to 'Edit', edit_preferencium_path(preferencium) %></td>
         <td><%= link_to 'Excluir', preferencium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
