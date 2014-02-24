@@ -1,0 +1,29 @@
+<h1>Listing preferencia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Produto</th>
+      <th>Cliente</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @preferencia.each do |preferencium| %>
+      <tr>
+        <td><%= preferencium.produto.nome %></td>
+        <td><%= preferencium.cliente.nome %></td>
+        <td><%= link_to 'Show', preferencium %></td>
+        <td><%= link_to 'Edit', edit_preferencium_path(preferencium) %></td>
+        <td><%= link_to 'Excluir', preferencium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Preferencia', new_preferencium_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140221110422) do
+ActiveRecord::Schema.define(version: 20140221141744) do
 
   create_table "clientes", force: true do |t|
     t.string   "nome"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20140221110422) do
     t.datetime "updated_at"
   end
 
+  create_table "interesses", force: true do |t|
+    t.integer  "produto_id"
+    t.integer  "cliente_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "interesses", ["cliente_id"], name: "index_interesses_on_cliente_id"
+  add_index "interesses", ["produto_id"], name: "index_interesses_on_produto_id"
+
   create_table "lojas", force: true do |t|
     t.string   "nome"
     t.string   "descricao"
@@ -28,6 +38,16 @@ ActiveRecord::Schema.define(version: 20140221110422) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "preferencia", force: true do |t|
+    t.integer  "produto_id"
+    t.integer  "cliente_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "preferencia", ["cliente_id"], name: "index_preferencia_on_cliente_id"
+  add_index "preferencia", ["produto_id"], name: "index_preferencia_on_produto_id"
 
   create_table "produtos", force: true do |t|
     t.string   "nome"

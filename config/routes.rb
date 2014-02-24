@@ -1,4 +1,6 @@
 Desconto::Application.routes.draw do
+  resources :preferencia
+
   resources :produtos
 
   get "home/index"
